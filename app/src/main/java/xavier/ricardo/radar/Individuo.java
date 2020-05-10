@@ -1,5 +1,7 @@
 package xavier.ricardo.radar;
 
+import androidx.annotation.NonNull;
+
 public class Individuo {
 
     private String id;
@@ -8,6 +10,12 @@ public class Individuo {
     private double longitude;
     private long atualizacao;
     private int distancia;
+
+    @Override
+    public String toString() {
+        return id + " (" + distancia + ")";
+    }
+
     public String getId() {
         return id;
     }

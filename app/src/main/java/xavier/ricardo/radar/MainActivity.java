@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity implements ApiActivity {
         EditText edtLongitude = findViewById(R.id.edtLongitude);
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         MyLocationListener locationListener = new MyLocationListener(this);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 0, locationListener);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 0, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 0, locationListener);
     }
 
     private void verificaPermissaoInternet() {
@@ -132,14 +132,6 @@ public class MainActivity extends AppCompatActivity implements ApiActivity {
 
         if (resposta.startsWith("ERRO:")) {
             Toast.makeText(this, resposta.substring(5), Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if (resposta.equals("ok")) {
-            EditText edtId = findViewById(R.id.edtId);
-            String url = "http://ricardoxavier.no-ip.org/radarws/radarws/vizinhanca/"
-                    + edtId.getText().toString();
-            new CallApi(this, url).execute();
             return;
         }
 
