@@ -9,29 +9,34 @@ import com.google.gson.Gson;
 
 class MyLocationListener implements LocationListener {
 
-    private MainActivity contexto;
+    private SituacaoActivity contexto;
 
-    public MyLocationListener(MainActivity contexto) {
+    public MyLocationListener(SituacaoActivity contexto) {
         this.contexto = contexto;
     }
 
     @Override
     public void onLocationChanged(Location location) {
 
+        /*
         EditText edtId = contexto.findViewById(R.id.edtId);
         EditText edtLatitude = contexto.findViewById(R.id.edtLatitude);
         EditText edtLongitude = contexto.findViewById(R.id.edtLongitude);
-
         edtLatitude.setText(String.valueOf(location.getLatitude()));
         edtLongitude.setText(String.valueOf(location.getLongitude()));
-
-        String url = "http://ricardoxavier.no-ip.org/radarws/radarws/atualiza";
-        Gson gson = new Gson();
         Individuo individuo = new Individuo();
         individuo.setId(edtId.getText().toString());
         individuo.setLatitude(location.getLatitude());
         individuo.setLongitude(location.getLongitude());
-        String json = gson.toJson(individuo);
+        */
+
+        Individuo eu = new Individuo();
+        eu.setLatitude(location.getLatitude());
+        eu.setLongitude(location.getLongitude());
+
+        String url = "http://ricardoxavier.no-ip.org/radarws/radarws/atualiza";
+        Gson gson = new Gson();
+        String json = gson.toJson(eu);
         new CallApi(contexto, url, json).execute();
 
     }

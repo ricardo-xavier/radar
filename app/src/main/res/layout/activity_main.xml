@@ -34,6 +34,12 @@
         android:focusable="false"
         android:text="" />
 
+    <Button
+        android:id="@+id/btnRadar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Radar" />
+
     <ListView
         android:id="@+id/lvVizinhanca"
         android:layout_width="match_parent"

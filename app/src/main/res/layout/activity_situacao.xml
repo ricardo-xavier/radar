@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SituacaoActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Como você está hoje?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="normal"
+                app:srcCompat="@drawable/naoinfectado" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:gravity="center"
+                android:text="Normal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="suspeito"
+                app:srcCompat="@drawable/suspeito" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:background="#FFEB3B"
+                android:gravity="center"
+                android:text="Suspeito"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="infectado"
+                app:srcCompat="@drawable/infectado" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:background="#F44336"
+                android:gravity="center"
+                android:text="Infectado"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="recuperado"
+                app:srcCompat="@drawable/recuperado" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="350px"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:gravity="center"
+                android:text="Recuperado"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
